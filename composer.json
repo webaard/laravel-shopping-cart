@@ -8,6 +8,14 @@
             "Webaard\\LaravelShoppingCart\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Webaard\\LaravelShoppingCart\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1"
+    },
     "authors": [
         {
             "name": "Rolin Bos",
