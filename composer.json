@@ -1,0 +1,29 @@
+{
+    "name": "webaard/laravel-shopping-cart",
+    "description": "Shopping cart that can be used inside a Laravel application",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Webaard\\LaravelShoppingCart\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rolin Bos",
+            "email": "rolin@webaard.com"
+        }
+    ],
+    "laravel": {
+        "providers": [
+            "Webaard\\LaravelShoppingCart\\LaravelShoppingCartServiceProvider"
+        ],
+        "aliases": {
+            "Cart": "Webaard\\LaravelShoppingCart\\Facades\\Cart"
+        }
+    },
+    "require-dev": {
+        "laravel/pint": "^1.8",
+        "phpstan/phpstan": "^1.10"
+    }
+}
