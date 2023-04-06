@@ -5,10 +5,10 @@ namespace Webaard\LaravelShoppingCart\Entities;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
-class CartEntity
+class CartObject
 {
     /**
-     * @param  Collection<string, CartItemEntity>  $cartItems
+     * @param  Collection<string, CartItem>  $cartItems
      */
     public function __construct(
         public Collection $cartItems = new Collection(),
@@ -58,7 +58,7 @@ class CartEntity
     /**
      * Add a cart item to the cart.
      */
-    public function addCartItem(CartItemEntity $cartItem): void
+    public function addCartItem(CartItem $cartItem): void
     {
         $this->cartItems->put($cartItem->getId(), $cartItem);
     }

@@ -3,17 +3,17 @@
 namespace Webaard\LaravelShoppingCart;
 
 use Illuminate\Support\Collection;
-use Webaard\LaravelShoppingCart\Entities\CartEntity;
-use Webaard\LaravelShoppingCart\Entities\CartItemEntity;
+use Webaard\LaravelShoppingCart\Entities\CartObject;
+use Webaard\LaravelShoppingCart\Entities\CartItem;
 
 class Cart
 {
-    private \Webaard\LaravelShoppingCart\Entities\CartEntity $cartObject;
+    private CartObject $cartObject;
 
     public function __construct()
     {
         if (! session()->has('cart')) {
-            session(['cart' => new CartEntity()]);
+            session(['cart' => new CartObject()]);
         }
 
         $this->cartObject = session('cart');
@@ -25,9 +25,9 @@ class Cart
     }
 
     /**
-     * Add a CartItemEntity object to the cart.
+     * Add a CartItem object to the cart.
      */
-    public function add(CartItemEntity $cartItem): void
+    public function add(CartItem $cartItem): void
     {
         $this->cartObject->addCartItem($cartItem);
 
@@ -37,7 +37,7 @@ class Cart
     /**
      * Get the cart.
      */
-    public function get(): CartItemEntity
+    public function get(): CartObject
     {
         return $this->cartObject;
     }
@@ -45,7 +45,7 @@ class Cart
     /**
      * Get all the cart items of the card.
      *
-     * @return Collection<string, CartItemEntity>
+     * @return Collection<string, CartItem>
      */
     public function getCartItems(): Collection
     {

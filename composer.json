@@ -1,6 +1,7 @@
 {
     "name": "webaard/laravel-shopping-cart",
     "description": "Shopping cart that can be used inside a Laravel application",
+    "keywords": ["laravel", "shoppingcart"],
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -14,7 +15,15 @@
         }
     },
     "require": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "illuminate/support": "^10.6",
+        "illuminate/session": "*"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.8",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^10.0",
+        "orchestra/testbench": "^8.3"
     },
     "authors": [
         {
@@ -22,16 +31,14 @@
             "email": "rolin@webaard.com"
         }
     ],
-    "laravel": {
-        "providers": [
-            "Webaard\\LaravelShoppingCart\\LaravelShoppingCartServiceProvider"
-        ],
-        "aliases": {
-            "Cart": "Webaard\\LaravelShoppingCart\\Facades\\Cart"
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webaard\\LaravelShoppingCart\\LaravelShoppingCartServiceProvider"
+            ],
+            "aliases": {
+                "Cart": "Webaard\\LaravelShoppingCart\\Facades\\Cart"
+            }
         }
-    },
-    "require-dev": {
-        "laravel/pint": "^1.8",
-        "phpstan/phpstan": "^1.10"
     }
 }

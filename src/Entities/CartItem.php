@@ -4,7 +4,7 @@ namespace Webaard\LaravelShoppingCart\Entities;
 
 use Illuminate\Support\Str;
 
-class CartItemEntity
+class CartItem
 {
     public function __construct(
         public string $productId,
@@ -12,8 +12,8 @@ class CartItemEntity
         public string $name,
         public string $sku,
         public float $priceExcl,
-        public string $vatId,
         public int $vatPercentage,
+        public ?string $vatId = null,
         public mixed $options = null,
         public ?string $description = null,
         protected ?float $priceIncl = null,
